@@ -1,2 +1,11 @@
 # SSD-YOLO
-Keras implementation of SSD (Single Shot MultiBox Detector) model and YOLO (You Only Look Once) model
+SSD (Single Shot MultiBox Detector) model using Keras and YOLO (You Only Look Once) model
+
+### Run SSD
+```
+python models/ssd.py
+```
+### Run YOLO
+```
+python models/yolo.py
+```
