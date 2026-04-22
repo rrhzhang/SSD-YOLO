@@ -7,6 +7,8 @@ import tensorflow_hub as hub
 #COCO class 1-based
 CLASSES = {77: 'cell phone', 1: 'person', 74: 'mouse'}
 
+# SSD MobileNetV2 pretrained model loaded via TensorFlow Hub
+# Architecture reference: https://github.com/tensorflow/models/tree/master/research/object_detection
 model = hub.load("https://tfhub.dev/tensorflow/ssd_mobilenet_v2/2")
 
 cap = cv2.VideoCapture(0)
