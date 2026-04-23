@@ -3,7 +3,7 @@ import cv2
 from ultralytics import YOLO
 
 # COCO class ID to objects
-CLASSES = {67: 'cell phone', 0: 'person', 64: 'mouse'}
+CLASSES = {67: 'cell phone', 0: 'person', 49: 'orange'}
 
 model = YOLO('yolov8n.pt')
 cap = cv2.VideoCapture(0)
@@ -16,7 +16,7 @@ while True:
 
     cv2.putText(frame, "Press Q to quit", (10, 30),
             cv2.FONT_HERSHEY_SIMPLEX, 0.9, (255, 255, 255), 2)
-            
+
     for box in results[0].boxes:
         class_id = int(box.cls[0])
         if class_id not in CLASSES:

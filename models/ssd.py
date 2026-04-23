@@ -5,7 +5,7 @@ import tensorflow as tf
 import tensorflow_hub as hub
 
 #COCO class 1-based
-CLASSES = {77: 'cell phone', 1: 'person', 74: 'mouse'}
+CLASSES = {77: 'cell phone', 1: 'person', 55: 'orange'}
 
 # SSD MobileNetV2 pretrained model loaded via TensorFlow Hub
 # Architecture reference: https://github.com/tensorflow/models/tree/master/research/object_detection
@@ -30,7 +30,7 @@ while True:
     classes = results['detection_classes'][0].numpy().astype(int)
 
     indices = tf.image.non_max_suppression(
-        boxes, scores, max_output_size=50, iou_threshold=0.4, score_threshold=0.5
+        boxes, scores, max_output_size=50, iou_threshold=0.3, score_threshold=0.6
     ).numpy()
     boxes = boxes[indices]
     scores = scores[indices]
